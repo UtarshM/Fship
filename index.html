@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Label Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      text-align: center;
+      /* background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      width: 50%;
+      /* w-1/2 */
+      background-color: #3b82f6;
+      /* bg-blue-500 */
+      color: white;
+      /* text-white */
+      padding: 8px 16px;
+      /* px-4 py-2 */
+      border-radius: 8px;
+      /* rounded-md */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #2563eb;
+      /* hover:bg-blue-600 */
+    }
+
+    .btn-primary:disabled {
+      background-color: #93c5fd;
+      /* disabled:bg-blue-300 */
+      cursor: not-allowed;
+    }
+
+
+    .btn-secondary {
+      background-color: #3b82f6;
+      /* bg-blue-500 */
+      color: white;
+      /* text-white */
+      padding: 8px 48px;
+      /* px-12 py-2 */
+      border-radius: 8px;
+      /* rounded-md */
+      margin-left: 8px;
+      /* ml-2 */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #2563eb;
+      /* hover:bg-blue-600 */
+    }
+
+    .btn-secondary:disabled {
+      background-color: #93c5fd;
+      /* disabled:bg-blue-300 */
+      cursor: not-allowed;
+    }
+
+
+    .btn-green {
+      background-color: #22c55e;
+      /* bg-green-500 */
+      color: white;
+      /* text-white */
+      padding: 8px 48px;
+      /* px-12 py-2 */
+      border-radius: 8px;
+      /* rounded-md */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-green:hover {
+      background-color: #16a34a;
+      /* hover:bg-green-600 */
+    }
+
+    .btn-green:disabled {
+      background-color: #86efac;
+      /* disabled:bg-green-300 */
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Shipping Label Generator</h1>
+    <div class="">
+      <form action="/label" method="post">
+        <label for="waybill">Waybill Number</label>
+        <input type="text" id="waybill" name="waybill" placeholder="Enter waybill number">
+        <div class="buttons">
+          <button class="btn btn-primary" type="submit">Generate Label</button>
+          <button class="btn btn-secondary" disabled>Download</button>
+        </div>
+      </form>
+
+    </div>
+    <div>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <label for="file">Upload Excel File</label>
+        <input type="file" id="file" name="file">
+        <input type="submit" value="Upload">
+      </form>
+    </div>
+    <button class="btn btn-green" disabled>Download All</button>
+  </div>
+</body>
+
+</html>
